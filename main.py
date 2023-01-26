@@ -24,8 +24,8 @@ def get_query():
 if __name__ == '__main__':
     load_dotenv()
     connect = get_connect()
-
-    tsv_file = Path('SKN_RETURN.tsv', mode='r', encoding='cp932')
+    box_dir = Path(os.getenv('BOX_DIR'))
+    tsv_file = Path(box_dir / 'SKN_RETURN.tsv', mode='r', encoding='cp932')
 
     with tsv_file.open() as f:
         for line in f:
