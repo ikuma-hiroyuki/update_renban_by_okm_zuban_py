@@ -29,7 +29,7 @@ if __name__ == '__main__':
         for line in f:
             line = line.split('\t')
             zuban_id, skn_zuban, okm_zuban, process_symbol = line[11], line[2], line[13], line[6]
-            query = get_query().format(zuban_id, skn_zuban, okm_zuban, process_symbol)
+            query = get_query().format(zuban_id, skn_zuban, okm_zuban.strip('\n'), process_symbol)
             cursor = connect.cursor()
             try:
                 cursor.execute(query)
