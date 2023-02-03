@@ -23,8 +23,7 @@ if __name__ == '__main__':
     load_dotenv()
     connect = get_connect()
     box_dir = Path(os.getenv('BOX_DIR'))
-    p = r"C:\Users\ikuma\Downloads\skn\a.tsv"
-    tsv_file = Path(p, mode='r', encoding='cp932')
+    tsv_file = Path(box_dir / 'SKN_RETURN.tsv', mode='r', encoding='cp932')
 
     with tsv_file.open() as f:
         for line in f:
